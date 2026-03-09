@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blue SMS Shooter v1.0.0 - 스마트 대량 문자 솔루션</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Pretendard Font -->
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/static/pretendard.css" />
+    <style>
+        body {
+            font-family: 'Pretendard', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        /* Custom Animations */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        @keyframes float-delay {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+        @keyframes fly-message {
+            0% { opacity: 0; transform: translate(0, 0) scale(0.5); }
+            20% { opacity: 1; }
+            80% { opacity: 1; }
+            100% { opacity: 0; transform: translate(100px, -100px) scale(1.2); }
+        }
+        
+        .animate-float { animation: float 3s ease-in-out infinite; }
+        .animate-float-delay { animation: float-delay 4s ease-in-out infinite 1s; }
+        .animate-fly-1 { animation: fly-message 3s ease-in-out infinite; }
+        .animate-fly-2 { animation: fly-message 3.5s ease-in-out infinite 1s; }
+        .animate-fly-3 { animation: fly-message 4s ease-in-out infinite 2s; }
+        
+        /* Network Pattern Background */
+        .bg-network {
+            background-color: #f0fdfa;
+            background-image: radial-gradient(#3b82f6 1px, transparent 1px);
+            background-size: 30px 30px;
+            background-position: 0 0, 15px 15px;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-slate-200 transition-all">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center gap-2">
+                    <div class="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center">
+                        <i data-lucide="send" class="text-white w-5 h-5"></i>
+                    </div>
+                    <span class="font-bold text-xl text-slate-900 tracking-tight">Blue SMS Shooter</span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#features" class="text-slate-600 hover:text-blue-600 font-medium transition-colors">주요 기능</a>
+                    <a href="#pricing" class="text-slate-600 hover:text-blue-600 font-medium transition-colors">비용 안내</a>
+                    <a href="#download" class="text-slate-600 hover:text-blue-600 font-medium transition-colors">다운로드</a>
+                </div>
+                <div>
+                    <a href="#download" class="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2.5 rounded-full font-semibold transition-colors shadow-md shadow-blue-500/30">
+                        무료 시작하기
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden bg-gradient-to-br from-blue-50 to-white min-h-screen flex items-center">
+        <!-- Background Decor -->
+        <div class="absolute inset-0 z-0 bg-network"></div>
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[500px] bg-blue-400/20 blur-[100px] rounded-full z-0"></div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col lg:flex-row items-center justify-between gap-12">
+            
+            <!-- Hero Text Content -->
+            <div class="text-center lg:text-left lg:max-w-xl">
+                <div class="inline-block px-4 py-1.5 rounded-full bg-blue-100 text-blue-700 font-semibold text-sm mb-6 border border-blue-200">
+                    Blue SMS Shooter v1.0.0 출시 🎉
+                </div>
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-[1.15] mb-6">
+                    통신비 걱정 끝! <br>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-500">
+                        내 폰으로 보내는 똑똑한 <br> 대량 문자 발송 솔루션
+                    </span>
+                </h1>
+                <p class="text-lg md:text-xl text-slate-600 mb-8 max-w-2xl mx-auto lg:mx-0 font-medium leading-relaxed">
+                    PC에서 편하게, AI로 스마트하게, <br class="hidden sm:block"> 기존 요금제 그대로 대량 문자를 발송하세요.
+                </p>
+                <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                    <a href="#download" class="w-full sm:w-auto px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-full font-bold text-lg transition-all shadow-lg shadow-blue-500/40 transform hover:-translate-y-1 flex items-center justify-center gap-2">
+                        <i data-lucide="download" class="w-5 h-5"></i>
+                        무료 다운로드
+                    </a>
+                    <a href="#features" class="w-full sm:w-auto px-8 py-4 bg-white hover:bg-slate-50 text-slate-700 border border-slate-200 rounded-full font-bold text-lg transition-all flex items-center justify-center gap-2">
+                        <i data-lucide="info" class="w-5 h-5 text-blue-500"></i>
+                        상세 기능 보기
+                    </a>
+                </div>
+            </div>
+
+            <!-- Hero Graphic (Conceptual Representation) -->
+            <div class="relative w-full max-w-lg lg:max-w-xl h-[400px] lg:h-[500px]">
+                
+                <!-- Center Laptop -->
+                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-56 bg-slate-800 rounded-xl shadow-2xl z-20 flex flex-col overflow-hidden border-4 border-slate-700">
+                    <!-- Screen Header -->
+                    <div class="h-6 w-full bg-slate-900 flex items-center px-2 space-x-1 border-b border-slate-700">
+                        <div class="w-2.5 h-2.5 rounded-full bg-red-500"></div>
+                        <div class="w-2.5 h-2.5 rounded-full bg-yellow-500"></div>
+                        <div class="w-2.5 h-2.5 rounded-full bg-green-500"></div>
+                    </div>
+                    <!-- Screen Body (Dashboard Mockup) -->
+                    <div class="flex-1 bg-slate-50 p-4 flex flex-col gap-2">
+                        <div class="h-4 w-32 bg-blue-200 rounded-md"></div>
+                        <div class="grid grid-cols-2 gap-2 mt-2">
+                            <div class="h-16 bg-white shadow-sm border border-slate-100 rounded-lg flex flex-col justify-center p-2">
+                                <span class="text-[10px] text-slate-400">이번 달 절약 금액</span>
+                                <span class="text-sm font-bold text-blue-600">₩ 245,000</span>
+                            </div>
+                            <div class="h-16 bg-white shadow-sm border border-slate-100 rounded-lg flex flex-col justify-center p-2">
+                                <span class="text-[10px] text-slate-400">발송 완료</span>
+                                <span class="text-sm font-bold text-green-500">1,850 건</span>
+                            </div>
+                        </div>
+                        <div class="h-12 w-full bg-blue-50 rounded-lg mt-auto border border-blue-100 flex items-center justify-center text-[10px] text-blue-500 font-bold">
+                            발송 리스트 최적화 중...
+                        </div>
+                    </div>
+                    <!-- Laptop Base -->
+                    <div class="absolute -bottom-6 left-1/2 -translate-x-1/2 w-[360px] h-6 bg-slate-300 rounded-b-xl border border-slate-400 shadow-xl">
+                        <div class="w-20 h-1 bg-slate-400 mx-auto mt-1 rounded-full"></div>
+                    </div>
+                </div>
+
+                <!-- Floating Smartphones & Connections -->
+                <div class="absolute top-10 left-4 lg:left-0 w-16 h-32 bg-slate-800 rounded-2xl border-4 border-slate-700 shadow-lg z-10 animate-float flex justify-center pt-2">
+                    <div class="w-6 h-1 bg-slate-900 rounded-full"></div>
+                    <i data-lucide="check-circle-2" class="absolute bottom-4 w-6 h-6 text-green-400"></i>
+                </div>
+                <div class="absolute bottom-16 right-4 lg:-right-4 w-16 h-32 bg-slate-800 rounded-2xl border-4 border-slate-700 shadow-lg z-10 animate-float-delay flex justify-center pt-2">
+                    <div class="w-6 h-1 bg-slate-900 rounded-full"></div>
+                    <i data-lucide="check-circle-2" class="absolute bottom-4 w-6 h-6 text-green-400"></i>
+                </div>
+
+                <!-- Flying Message Icons -->
+                <div class="absolute top-1/2 left-1/2 z-30 pointer-events-none">
+                    <div class="absolute -top-10 -left-20 animate-fly-1 text-blue-500">
+                        <svg class="w-8 h-8 fill-current drop-shadow-md" viewBox="0 0 24 24"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+                    </div>
+                    <div class="absolute -top-20 right-10 animate-fly-2 text-indigo-500">
+                        <svg class="w-10 h-10 fill-current drop-shadow-md" viewBox="0 0 24 24"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+                    </div>
+                    <div class="absolute top-10 left-20 animate-fly-3 text-sky-400">
+                        <svg class="w-6 h-6 fill-current drop-shadow-md" viewBox="0 0 24 24"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+                    </div>
+                </div>
+
+                <!-- Abstract connection lines (SVG) -->
+                <svg class="absolute inset-0 w-full h-full z-0 opacity-20" viewBox="0 0 500 500">
+                    <path d="M 250 250 Q 150 150 100 200" stroke="#3b82f6" stroke-width="2" fill="none" stroke-dasharray="4 4"/>
+                    <path d="M 250 250 Q 350 350 400 300" stroke="#3b82f6" stroke-width="2" fill="none" stroke-dasharray="4 4"/>
+                    <path d="M 250 250 Q 400 150 450 200" stroke="#3b82f6" stroke-width="2" fill="none" stroke-dasharray="4 4"/>
+                </svg>
+
+            </div>
+        </div>
+    </header>
+
+    <!-- Highlight Banner -->
+    <section class="bg-blue-900 py-6 relative z-20 border-y border-blue-800 shadow-xl">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-center text-xl md:text-2xl font-bold text-white mb-6">
+                PC에서 클릭 한 번으로, 내 폰 문자 무제한 활용!
+            </h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                <div class="flex flex-col items-center justify-center text-blue-100 hover:text-white transition-colors">
+                    <div class="bg-white/10 p-3 rounded-full mb-2">
+                        <i data-lucide="piggy-bank" class="w-6 h-6 text-yellow-400"></i>
+                    </div>
+                    <span class="font-semibold text-sm">💰 비용절감</span>
+                </div>
+                <div class="flex flex-col items-center justify-center text-blue-100 hover:text-white transition-colors">
+                    <div class="bg-white/10 p-3 rounded-full mb-2">
+                        <i data-lucide="bot" class="w-6 h-6 text-sky-400"></i>
+                    </div>
+                    <span class="font-semibold text-sm">🤖 AI작성</span>
+                </div>
+                <div class="flex flex-col items-center justify-center text-blue-100 hover:text-white transition-colors">
+                    <div class="bg-white/10 p-3 rounded-full mb-2">
+                        <i data-lucide="shield-check" class="w-6 h-6 text-green-400"></i>
+                    </div>
+                    <span class="font-semibold text-sm">🛡️ 스팸방지</span>
+                </div>
+                <div class="flex flex-col items-center justify-center text-blue-100 hover:text-white transition-colors">
+                    <div class="bg-white/10 p-3 rounded-full mb-2">
+                        <i data-lucide="calendar-clock" class="w-6 h-6 text-purple-400"></i>
+                    </div>
+                    <span class="font-semibold text-sm">📅 예약발송</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Features Section -->
+    <section id="features" class="py-24 bg-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-base text-blue-600 font-semibold tracking-wide uppercase">핵심 기능</h2>
+                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-slate-900 sm:text-4xl">
+                    어떤 점이 특별할까요?
+                </p>
+                <p class="mt-4 max-w-2xl text-xl text-slate-500 mx-auto">
+                    단순한 문자 발송을 넘어, 스마트한 마케팅과 관리까지 책임집니다.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Features List -->
+                <div class="bg-slate-50 rounded-2xl p-8 border border-slate-100 shadow-sm hover:shadow-xl hover:border-blue-100 transition-all group">
+                    <div class="w-14 h-14 bg-yellow-100 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i data-lucide="coins" class="w-7 h-7 text-yellow-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">💰 압도적인 비용 절감</h3>
+                    <p class="text-slate-600 leading-relaxed text-sm">
+                        비싼 문자 발송 업체 대신 스마트폰 요금제의 무료 문자를 활용하세요. 기존 서비스 대비 <strong class="text-blue-600">최대 90% 이상 비용 절감</strong> 효과를 제공하며, 대시보드에서 실시간으로 절약된 금액을 확인하실 수 있습니다.
+                    </p>
+                </div>
+
+                <div class="bg-gradient-to-br from-blue-600 to-indigo-700 rounded-2xl p-8 shadow-lg hover:shadow-xl hover:shadow-blue-500/30 transition-all group relative overflow-hidden md:col-span-2 lg:col-span-1 lg:row-span-2 text-white" id="ai">
+                    <i data-lucide="sparkles" class="absolute -right-4 -top-4 w-32 h-32 text-white opacity-10"></i>
+                    <div class="w-14 h-14 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i data-lucide="bot-message-square" class="w-7 h-7 text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">🤖 AI 문구 작성 도우미</h3>
+                    <div class="inline-block px-2 py-1 bg-white/20 text-xs rounded-md mb-3 font-semibold text-blue-100 border border-white/20">Google Gemini 탑재</div>
+                    <p class="text-blue-50 leading-relaxed text-sm mb-6">
+                        최신 AI 기술이 상황에 딱 맞는 정중하고 센스 있는 문구를 대신 작성해 드립니다. 고객 맞춤형 인사말부터 마케팅 문구까지 터치 한 번으로 생성하세요.
+                    </p>
+                    <div class="bg-white/10 rounded-lg p-4 border border-white/20 mt-auto">
+                        <p class="text-xs text-blue-100 mb-1 opacity-70">AI 제안 예시:</p>
+                        <p class="text-sm italic font-medium">"고객님, 풍성한 한가위 되세요! 변함없는 성원에 감사드리며..."</p>
+                    </div>
+                </div>
+
+                <div class="bg-slate-50 rounded-2xl p-8 border border-slate-100 shadow-sm hover:shadow-xl hover:border-blue-100 transition-all group">
+                    <div class="w-14 h-14 bg-green-100 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i data-lucide="shield-check" class="w-7 h-7 text-green-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">🛡️ 안전한 발송 관리</h3>
+                    <p class="text-slate-600 leading-relaxed text-sm">
+                        <strong class="text-slate-800">스마트 리미트 가드</strong>가 발송 한도 및 고유 수신자 수(최대 2,000명)를 자동 체크합니다. 통신사 정책 준수를 통해 안전한 발송 환경을 유지합니다.
+                    </p>
+                </div>
+
+                <div class="bg-slate-50 rounded-2xl p-8 border border-slate-100 shadow-sm hover:shadow-xl hover:border-blue-100 transition-all group">
+                    <div class="w-14 h-14 bg-purple-100 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i data-lucide="file-spreadsheet" class="w-7 h-7 text-purple-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">📊 편리한 연락처 관리</h3>
+                    <ul class="text-slate-600 text-sm space-y-2">
+                        <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-blue-500 mt-0.5 shrink-0"></i> <span>엑셀 일괄 등록 지원</span></li>
+                        <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-blue-500 mt-0.5 shrink-0"></i> <span>그룹별 체계적인 분류</span></li>
+                    </ul>
+                </div>
+
+                <div class="bg-slate-50 rounded-2xl p-8 border border-slate-100 shadow-sm hover:shadow-xl hover:border-blue-100 transition-all group">
+                    <div class="w-14 h-14 bg-rose-100 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <i data-lucide="zap" class="w-7 h-7 text-rose-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">⚡ 유연한 발송 옵션</h3>
+                    <ul class="text-slate-600 text-sm space-y-2">
+                        <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-blue-500 mt-0.5 shrink-0"></i> <span>예약 전송 및 속도 조절</span></li>
+                        <li class="flex items-start gap-2"><i data-lucide="check" class="w-4 h-4 text-blue-500 mt-0.5 shrink-0"></i> <span>개별 맞춤 변수 치환</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-24 bg-slate-50 relative border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-base text-blue-600 font-semibold tracking-wide uppercase">이용 요금</h2>
+                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-slate-900 sm:text-4xl">
+                    합리적인 가격으로 무제한 혜택을 누리세요
+                </p>
+                <div class="mt-5 inline-flex items-center gap-1.5 bg-slate-200/50 text-slate-500 px-3 py-1.5 rounded-full text-sm font-medium">
+                    <i data-lucide="info" class="w-4 h-4"></i>
+                    모든 이용 요금은 부가세(VAT) 별도입니다.
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto items-center">
+                <!-- 1 Month -->
+                <div class="bg-white rounded-2xl border border-slate-200 p-8 shadow-sm hover:shadow-md transition-shadow">
+                    <h3 class="text-xl font-semibold text-slate-900 mb-2">1개월 이용권</h3>
+                    <div class="mb-6">
+                        <span class="text-4xl font-extrabold text-slate-900">9,000</span>
+                        <span class="text-slate-500 font-medium">원 / 월</span>
+                    </div>
+                    <button class="w-full py-3 px-4 bg-slate-100 hover:bg-slate-200 text-slate-800 rounded-xl font-bold transition-colors">선택하기</button>
+                </div>
+
+                <!-- 1 Year -->
+                <div class="bg-gradient-to-b from-blue-600 to-blue-800 rounded-2xl border border-blue-500 p-8 shadow-xl text-white relative transform md:-translate-y-4 z-10">
+                    <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-yellow-400 to-yellow-500 text-yellow-900 text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-wide">Best Value</div>
+                    <h3 class="text-xl font-semibold mb-2">1년 이용권</h3>
+                    <div class="mb-2">
+                        <span class="text-4xl font-extrabold">5,000</span>
+                        <span class="text-blue-200 font-medium">원 / 월</span>
+                    </div>
+                    <p class="text-blue-200 text-xs mb-6 font-medium text-center">연결제 (총 60,000원, 부가세 별도)</p>
+                    <button class="w-full py-3 px-4 bg-white hover:bg-slate-50 text-blue-700 rounded-xl font-bold transition-colors">1년권 시작하기</button>
+                </div>
+
+                <!-- 6 Months -->
+                <div class="bg-white rounded-2xl border border-slate-200 p-8 shadow-sm hover:shadow-md transition-shadow">
+                    <h3 class="text-xl font-semibold text-slate-900 mb-2">6개월 이용권</h3>
+                    <div class="mb-2">
+                        <span class="text-4xl font-extrabold text-slate-900">7,000</span>
+                        <span class="text-slate-500 font-medium">원 / 월</span>
+                    </div>
+                    <p class="text-slate-400 text-xs mb-6 font-medium text-center">일시불 결제 (총 42,000원, 부가세 별도)</p>
+                    <button class="w-full py-3 px-4 bg-slate-100 hover:bg-slate-200 text-slate-800 rounded-xl font-bold transition-colors">선택하기</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA & Download Section -->
+    <section id="download" class="bg-blue-600 py-16 relative overflow-hidden">
+        <div class="absolute top-0 right-0 -mr-20 -mt-20 w-64 h-64 rounded-full bg-white opacity-10 blur-2xl"></div>
+        <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 rounded-full bg-blue-400 opacity-20 blur-3xl"></div>
+        
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 text-white">
+            <h2 class="text-3xl md:text-4xl font-extrabold mb-6">지금 바로 시작하세요!</h2>
+            <p class="text-blue-100 text-lg mb-10 max-w-2xl mx-auto">다운로드 후 클릭 몇 번이면 스마트폰과 PC가 연결됩니다.</p>
+            
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <!-- Windows Download -->
+                <a href="download/BSS2-Setup.exe" download class="w-full sm:w-auto px-8 py-5 bg-white text-slate-800 hover:bg-slate-50 rounded-2xl font-bold shadow-xl shadow-blue-800/30 transition-transform transform hover:-translate-y-1 flex items-center justify-center gap-4 min-w-[240px]">
+                    <div class="bg-blue-100 p-2.5 rounded-xl text-blue-600">
+                        <i data-lucide="monitor" class="w-7 h-7"></i>
+                    </div>
+                    <div class="text-left leading-tight">
+                        <div class="text-xs font-semibold text-blue-600 mb-0.5">Windows Dashboard</div>
+                        <div class="text-lg text-slate-900 font-extrabold tracking-tight">대시보드 다운로드</div>
+                    </div>
+                </a>
+                
+                <!-- Android Download -->
+                <a href="download/bssGW.apk" download class="w-full sm:w-auto px-8 py-5 bg-slate-800 text-white hover:bg-slate-700 border border-slate-700 rounded-2xl font-bold shadow-xl shadow-slate-900/30 transition-transform transform hover:-translate-y-1 flex items-center justify-center gap-4 min-w-[240px]">
+                    <div class="bg-slate-700 p-2.5 rounded-xl text-green-400">
+                        <i data-lucide="smartphone" class="w-7 h-7"></i>
+                    </div>
+                    <div class="text-left leading-tight">
+                        <div class="text-xs font-semibold text-green-400 mb-0.5">Android Gateway</div>
+                        <div class="text-lg font-extrabold tracking-tight">스마트폰용 앱 다운로드</div>
+                    </div>
+                </a>
+            </div>
+            
+            <p class="mt-8 text-sm text-blue-200 flex items-center justify-center gap-2">
+                <i data-lucide="info" class="w-4 h-4"></i>
+                서비스 이용을 위해 PC 프로그램과 스마트폰 앱을 모두 설치해 주세요.
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 py-10 text-slate-400 text-center text-sm border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-4">
+            <div class="flex items-center gap-2">
+                <div class="w-6 h-6 rounded bg-blue-600 flex items-center justify-center">
+                    <i data-lucide="send" class="text-white w-3 h-3"></i>
+                </div>
+                <span class="font-bold text-white">Blue SMS Shooter</span>
+            </div>
+            <p>© 2026 Blue SMS Shooter. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
