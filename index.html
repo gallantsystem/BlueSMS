@@ -82,20 +82,20 @@
         <div class="absolute inset-0 z-0 bg-network"></div>
         <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[500px] bg-blue-400/20 blur-[100px] rounded-full z-0"></div>
 
-        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col lg:flex-row items-center justify-between gap-12">
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row items-center justify-between gap-12">
             
-            <!-- Hero Text Content -->
-            <div class="text-center lg:text-left lg:max-w-xl">
+            <!-- Hero Text Content (폭을 유연하게 조정) -->
+            <div class="w-full lg:flex-1 text-center lg:text-left">
                 <div class="inline-block px-4 py-1.5 rounded-full bg-blue-100 text-blue-700 font-semibold text-sm mb-6 border border-blue-200">
                     Blue SMS Shooter v1.0.0 출시 🎉
                 </div>
-                <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-[1.15] mb-6">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold text-slate-900 tracking-tight leading-[1.15] mb-6 break-keep">
                     통신비 걱정 끝! <br>
                     <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-500">
-                        내 폰으로 보내는 똑똑한 <br> 대량 문자 발송 솔루션
+                        내 폰으로 보내는 똑똑한 <br class="hidden sm:block"> 대량 문자 발송 솔루션
                     </span>
                 </h1>
-                <p class="text-lg md:text-xl text-slate-600 mb-8 max-w-2xl mx-auto lg:mx-0 font-medium leading-relaxed">
+                <p class="text-lg md:text-xl text-slate-600 mb-8 max-w-3xl mx-auto lg:mx-0 font-medium leading-relaxed break-keep">
                     PC에서 편하게, AI로 스마트하게, <br class="hidden sm:block"> 기존 요금제 그대로 대량 문자를 발송하세요.
                 </p>
                 <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
@@ -110,18 +110,18 @@
                 </div>
             </div>
 
-            <!-- Hero Graphic (Conceptual Representation) -->
-            <div class="relative w-full max-w-lg lg:max-w-xl h-[400px] lg:h-[500px]">
+            <!-- Hero Graphic (폭 유지 및 유연한 배치) -->
+            <div class="relative w-full max-w-lg lg:max-w-none lg:w-2/5 h-[400px] lg:h-[500px] flex items-center justify-center">
                 
                 <!-- Center Laptop -->
-                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-56 bg-slate-800 rounded-xl shadow-2xl z-20 flex flex-col overflow-hidden border-4 border-slate-700">
+                <div class="relative w-80 h-56 bg-slate-800 rounded-xl shadow-2xl z-20 flex flex-col overflow-hidden border-4 border-slate-700">
                     <!-- Screen Header -->
                     <div class="h-6 w-full bg-slate-900 flex items-center px-2 space-x-1 border-b border-slate-700">
                         <div class="w-2.5 h-2.5 rounded-full bg-red-500"></div>
                         <div class="w-2.5 h-2.5 rounded-full bg-yellow-500"></div>
                         <div class="w-2.5 h-2.5 rounded-full bg-green-500"></div>
                     </div>
-                    <!-- Screen Body (Dashboard Mockup) -->
+                    <!-- Screen Body -->
                     <div class="flex-1 bg-slate-50 p-4 flex flex-col gap-2">
                         <div class="h-4 w-32 bg-blue-200 rounded-md"></div>
                         <div class="grid grid-cols-2 gap-2 mt-2">
@@ -145,11 +145,11 @@
                 </div>
 
                 <!-- Floating Smartphones & Connections -->
-                <div class="absolute top-10 left-4 lg:left-0 w-16 h-32 bg-slate-800 rounded-2xl border-4 border-slate-700 shadow-lg z-10 animate-float flex justify-center pt-2">
+                <div class="absolute top-0 left-0 sm:left-10 w-16 h-32 bg-slate-800 rounded-2xl border-4 border-slate-700 shadow-lg z-10 animate-float flex justify-center pt-2">
                     <div class="w-6 h-1 bg-slate-900 rounded-full"></div>
                     <i data-lucide="check-circle-2" class="absolute bottom-4 w-6 h-6 text-green-400"></i>
                 </div>
-                <div class="absolute bottom-16 right-4 lg:-right-4 w-16 h-32 bg-slate-800 rounded-2xl border-4 border-slate-700 shadow-lg z-10 animate-float-delay flex justify-center pt-2">
+                <div class="absolute bottom-10 right-0 sm:right-10 w-16 h-32 bg-slate-800 rounded-2xl border-4 border-slate-700 shadow-lg z-10 animate-float-delay flex justify-center pt-2">
                     <div class="w-6 h-1 bg-slate-900 rounded-full"></div>
                     <i data-lucide="check-circle-2" class="absolute bottom-4 w-6 h-6 text-green-400"></i>
                 </div>
@@ -157,23 +157,12 @@
                 <!-- Flying Message Icons -->
                 <div class="absolute top-1/2 left-1/2 z-30 pointer-events-none">
                     <div class="absolute -top-10 -left-20 animate-fly-1 text-blue-500">
-                        <svg class="w-8 h-8 fill-current drop-shadow-md" viewBox="0 0 24 24"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+                        <svg class="w-8 h-8 fill-current" viewBox="0 0 24 24"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
                     </div>
                     <div class="absolute -top-20 right-10 animate-fly-2 text-indigo-500">
-                        <svg class="w-10 h-10 fill-current drop-shadow-md" viewBox="0 0 24 24"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
-                    </div>
-                    <div class="absolute top-10 left-20 animate-fly-3 text-sky-400">
-                        <svg class="w-6 h-6 fill-current drop-shadow-md" viewBox="0 0 24 24"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+                        <svg class="w-10 h-10 fill-current" viewBox="0 0 24 24"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
                     </div>
                 </div>
-
-                <!-- Abstract connection lines (SVG) -->
-                <svg class="absolute inset-0 w-full h-full z-0 opacity-20" viewBox="0 0 500 500">
-                    <path d="M 250 250 Q 150 150 100 200" stroke="#3b82f6" stroke-width="2" fill="none" stroke-dasharray="4 4"/>
-                    <path d="M 250 250 Q 350 350 400 300" stroke="#3b82f6" stroke-width="2" fill="none" stroke-dasharray="4 4"/>
-                    <path d="M 250 250 Q 400 150 450 200" stroke="#3b82f6" stroke-width="2" fill="none" stroke-dasharray="4 4"/>
-                </svg>
-
             </div>
         </div>
     </header>
@@ -351,7 +340,7 @@
             
             <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <!-- Windows Download -->
-                <a href="https://drive.google.com/file/d/1uJUa7jXwL2L_A18PAKery2uOtSadNHKp/view?usp=sharing" download class="w-full sm:w-auto px-8 py-5 bg-white text-slate-800 hover:bg-slate-50 rounded-2xl font-bold shadow-xl shadow-blue-800/30 transition-transform transform hover:-translate-y-1 flex items-center justify-center gap-4 min-w-[240px]">
+                <a href="download/BSS2-Setup.exe" download class="w-full sm:w-auto px-8 py-5 bg-white text-slate-800 hover:bg-slate-50 rounded-2xl font-bold shadow-xl shadow-blue-800/30 transition-transform transform hover:-translate-y-1 flex items-center justify-center gap-4 min-w-[240px]">
                     <div class="bg-blue-100 p-2.5 rounded-xl text-blue-600">
                         <i data-lucide="monitor" class="w-7 h-7"></i>
                     </div>
@@ -362,7 +351,7 @@
                 </a>
                 
                 <!-- Android Download -->
-                <a href="https://drive.google.com/file/d/1uRAY_uccM0dF5265fWLeQ3Lr1uHkKKwE/view?usp=sharing" download class="w-full sm:w-auto px-8 py-5 bg-slate-800 text-white hover:bg-slate-700 border border-slate-700 rounded-2xl font-bold shadow-xl shadow-slate-900/30 transition-transform transform hover:-translate-y-1 flex items-center justify-center gap-4 min-w-[240px]">
+                <a href="download/bssGW.apk" download class="w-full sm:w-auto px-8 py-5 bg-slate-800 text-white hover:bg-slate-700 border border-slate-700 rounded-2xl font-bold shadow-xl shadow-slate-900/30 transition-transform transform hover:-translate-y-1 flex items-center justify-center gap-4 min-w-[240px]">
                     <div class="bg-slate-700 p-2.5 rounded-xl text-green-400">
                         <i data-lucide="smartphone" class="w-7 h-7"></i>
                     </div>
@@ -397,5 +386,4 @@
         lucide.createIcons();
     </script>
 </body>
-
 </html>
